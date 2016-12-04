@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-gem 'sqlite3'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -15,8 +14,18 @@ gem 'will_paginate'
 gem 'money'
 gem 'figaro'
 
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', '~> 2.0', require: false
+
+group :production do
+    gem 'mysql2', '~> 0.3.13'
+    gem 'rails_12factor', '0.0.2'
+end
+
 group :development, :test do
   gem 'byebug', platform: :mri
+  gem 'sqlite3'
 end
 
 group :development do
