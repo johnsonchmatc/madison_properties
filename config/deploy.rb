@@ -13,7 +13,7 @@ set :rbenv_roles, :all # default value
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/var/www'
+set :deploy_to, "/var/www/#{fetch(:application)}"
 
 # Default value for :pty is false
 set :pty, true
