@@ -20,7 +20,6 @@ gem 'capistrano-rbenv', '~> 2.0', require: false
 
 group :production do
     gem 'mysql2', '~> 0.3.13'
-    gem 'rails_12factor', '0.0.2'
 end
 
 group :development, :test do

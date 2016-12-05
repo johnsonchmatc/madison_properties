@@ -19,7 +19,7 @@ set :deploy_to, "/var/www/#{fetch(:application)}"
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/application.yml}
+set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml}
 
 namespace :deploy do
 
