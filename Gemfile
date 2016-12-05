@@ -14,9 +14,6 @@ gem 'will_paginate'
 gem 'money'
 gem 'figaro'
 
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-rbenv', '~> 2.0', require: false
 
 group :production do
     gem 'mysql2', '~> 0.3.13'
@@ -25,6 +22,10 @@ end
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
 end
 
 group :development do
