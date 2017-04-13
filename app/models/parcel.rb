@@ -1,5 +1,5 @@
 class Parcel < ApplicationRecord
-  require 'CSV'
+  require 'csv'
 
   geocoded_by :generated_address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
