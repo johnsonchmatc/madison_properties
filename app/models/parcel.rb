@@ -16,6 +16,7 @@ class Parcel < ApplicationRecord
 
       parcel.save
     end
+    NotificationMailer.csv_processed(file.basename).deliver_now
   end
 
   def generated_address
