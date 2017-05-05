@@ -18,6 +18,14 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', '~> 2.0', require: false
+
+group :production do
+  gem 'mysql2', '~> 0.3.13'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
