@@ -15,8 +15,9 @@ class Parcel < ApplicationRecord
       parcel.total_taxes = cleanup_dollar_values_from_csv(parcel_hash["Total Taxes"])
 
       save_time = Benchmark.measure { parcel.save }
-      log = { event: 'parcel.import.save_time', message: save_time }
-      puts log.to_json
+
+      message = { event: 'parcel.import.save_time', message: save_time }
+      BENCHMARKLOGGER.info message.to_json
     end
   end
 
