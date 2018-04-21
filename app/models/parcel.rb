@@ -14,7 +14,8 @@ class Parcel < ApplicationRecord
       parcel.previous_year_value = cleanup_dollar_values_from_csv(parcel_hash["Previous Year Total Value"])
       parcel.total_taxes = cleanup_dollar_values_from_csv(parcel_hash["Total Taxes"])
 
-      parcel.save
+      save_time = Benchmark.measure { parcel.save }
+      puts "Save Time: #{save_time}"
     end
   end
 
